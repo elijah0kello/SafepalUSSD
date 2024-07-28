@@ -310,8 +310,6 @@ const menuOptions = {
       //   1- Send the report to the safepal platform
       const response = await sendReportToAPI(userReport);
       const { status, casenumber } = response;
-      console.log(response);
-      console.log(status);
 
       if (status) {
         res.status(200).json({
