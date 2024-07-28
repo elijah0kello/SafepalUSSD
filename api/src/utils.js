@@ -61,8 +61,8 @@ const config = (method, url, data) => {
 
 const getAPIToken = async () => {
   const data = JSON.stringify({
-    hash: process.env.SAFEPAL_API_HASH,
-    username: process.env.SAFEPAL_API_USERNAME,
+    token: process.env.SAFEPAL_API_HASH,
+    userid: process.env.SAFEPAL_API_USERNAME,
   });
   try {
     const _data = await axios(
@@ -85,7 +85,6 @@ const sendReportToAPI = async (report) => {
     token: await getAPIToken(),
     ...report,
   });
-  console.log(data);
   try {
     const _data = await axios(
       config(
