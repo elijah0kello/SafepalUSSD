@@ -85,7 +85,7 @@ const sendReportToAPI = async (report) => {
     token: await getAPIToken(),
     ...report,
   });
-
+  console.log(data);
   try {
     const _data = await axios(
       config(
